@@ -57,7 +57,28 @@ https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-
 ssh -i "panova-ubuntu01.pem" ubuntu@ec2-52-77-228-197.ap-southeast-1.compute.amazonaws.com
 ```
 
+## init.d
+- list service of init.d and update-rc
+    ```
+    service --status-all |grep
+    
+    sudo update-rc.d my_application_name defaults
+    ```
+
 ## HA configuration
+
+- Edit and restart haproxy
+```
+    sudo nano /etc/haproxy/haproxy.cfg
+    sudo /etc/init.d/haproxy start
+```
+
+## Deploy code
+- Step1: Pull code
+- Step 2: run command
+```sh
+sudo service reewod restart
+```
 
 ### Reference
 
