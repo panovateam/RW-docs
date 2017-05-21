@@ -54,7 +54,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-
 
 ## SSH
 ```sh
-ssh -i "panova-ubuntu01.pem" ubuntu@ec2-52-77-228-197.ap-southeast-1.compute.amazonaws.com
+ssh -i "panova-ubuntu01.pem" ubuntu@panova.vn
 ```
 
 ## init.d
@@ -80,6 +80,16 @@ ssh -i "panova-ubuntu01.pem" ubuntu@ec2-52-77-228-197.ap-southeast-1.compute.ama
 sudo service reewod restart
 ```
 
+## VSFTPD Config
+http://www.sigerr.org/linux/setup-vsftpd-custom-multiple-directories-users-accounts-ubuntu-step-by-step/
+```
+mkdir /var/www/user1
+chmod -w /var/www/user1
+mkdir www/user1/www
+chmod -R 755 /var/www/user1/www
+chown -R vsftpd:nogroup /var/www/user1
+```
+
 ### Reference
 
 ```
@@ -87,4 +97,8 @@ http://physalix.com/reverse-proxy-for-nodejs-in-production-with-apache2-haproxy-
 https://www.digitalocean.com/community/tutorials/how-to-use-haproxy-to-set-up-http-load-balancing-on-an-ubuntu-vps
 https://www.upcloud.com/support/haproxy-load-balancer-centos/
 https://evancarmi.com/writing/load-balance-multiple-ssl-sites-with-haproxy/
+```
+Config fpt & firewall
+```
+https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-for-a-user-s-directory-on-ubuntu-16-04
 ```
